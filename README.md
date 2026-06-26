@@ -1,137 +1,137 @@
-# 未来人物谈 | Future Personas Chat
+# Future Personas Chat | 未来人物谈
 
-> ⚠️ **需要自备 API Key**：这是一个前端 HTML 应用，需要你自己配置 DeepSeek 或其他 OpenAI 兼容服务的 API Key 才能运行。
+> ⚠️ **Bring Your Own API Key**: This is a frontend-only HTML app. You need to configure your own DeepSeek or OpenAI-compatible API key to use it.
 >
-> 一个基于 2035 年未来人物画像的 AI 角色扮演聊天室，支持 1v1 对话、群聊辩论、Prompt Lab 调试。
+> An AI roleplay chatroom based on 2035 future personas, supporting 1v1 chat, group debate, and Prompt Lab debugging.
 
 ---
 
-## 起因
+## Origin
 
-这是一个因为自己需要而搭建的"未来人物聊天室"。
+This is a "future personas chatroom" built for my own needs.
 
-在做未来设计（Futures Design / Speculative Design）的时候，我希望能有一些"活"的参考——不是静态的报告，而是可以对话、可以争辩、可以碰撞出意外观点的未来角色。于是就有了这个项目：为 2035 年创造了 10 个不同领域的人物，注入真实的未来趋势信号，让他们成为你可以聊天的"未来居民"。
+When doing Futures Design / Speculative Design, I wanted "living" references—not static reports, but future characters you can talk to, argue with, and have unexpected collisions of ideas. So I created this project: 10 characters from different fields in 2035, injected with real future trend signals, making them "future residents" you can chat with.
 
-**免责声明**：这些人物提供的是**不具有参考价值的启发**——他们是虚构的、带着我的偏见和想象的产物。请把他们当作"创意催化剂"，而不是预测。
+**Disclaimer**: These personas provide **inspiration without reference value**—they are fictional, biased, and imagined. Treat them as "creative catalysts," not predictions.
 
 ---
 
-## 功能
+## Features
 
-### 🤖 1v1 聊天
-选择任意人物，进行一对一深度对话。每个人物都有：
-- 独特的身份背景与职业轨迹
-- 个性化的说话方式（口语化、带情绪、非正式）
-- 基于真实趋势信号的记忆与观点
-- 长期记忆（跨对话保留上下文）
+### 🤖 1v1 Chat
+Choose any persona for a one-on-one deep conversation. Each persona has:
+- Unique identity background and career trajectory
+- Personalized speaking style (colloquial, emotional, informal)
+- Memory and opinions based on real trend signals
+- Long-term memory (context preserved across conversations)
 
-### 👥 群聊模式
-支持多人物同时在线辩论或头脑风暴：
-- **辩论模式**：设定议题，看不同立场的人物如何交锋
-- **头脑风暴模式**：围绕一个主题，收集多元视角的灵感
-- 人物会自动回应彼此，形成有机的对话流
+### 👥 Group Chat Mode
+Support multiple personas debating or brainstorming simultaneously:
+- **Debate Mode**: Set a topic and watch how different stances clash
+- **Brainstorm Mode**: Gather diverse perspectives around a theme
+- Personas will naturally respond to each other, forming organic conversation flow
 
 ### 🧪 Prompt Lab v3
-一个内置的提示词实验室，用于组装和调试人物画像：
-- **分层提示词结构**：身份 → 说话方式 → 世界观 → 叙事参考 → 记忆 → 态度
-- **框架切换**：支持 CO-STAR、Few-Shot、RFT、Ontology、Attack-Hardened 等多种提示词框架
-- **风洞测试**：实时验证提示词效果，检查叙事长度、正式用语、舞台指示等问题
-- **自定义人物**：从零创建你自己的 2035 居民
+A built-in prompt engineering lab for assembling and debugging persona profiles:
+- **Layered prompt structure**: Identity → Speech → Worldview → Narrative Reference → Memory → Attitude
+- **Framework switching**: Supports CO-STAR, Few-Shot, RFT, Ontology, Attack-Hardened, and more
+- **Wind tunnel testing**: Real-time validation of prompt effects, checking narrative length, formal language, stage directions, etc.
+- **Custom personas**: Create your own 2035 residents from scratch
 
 ---
 
-## 技术设置
+## Technical Setup
 
-### 提示词结构（8-9 层）
+### Prompt Structure (8-9 Layers)
 
-每个人物由 8-9 层提示词组装而成：
+Each persona is assembled from 8-9 prompt layers:
 
-| 层级 | 内容 | 作用 |
-|------|------|------|
-| 1 | 绝对身份规则 | 防止角色漂移的硬约束 |
-| 2 | 你是谁 | 核心身份与当前状态 |
-| 3 | 你说话的方式 | 口语特征、口头禅、情绪表达 |
-| 4 | 示例语气 | 2-6 段真实对话示例 |
-| 5 | 你生活的世界前提 | 2035 年的技术/社会/文化背景 |
-| 6 | 你内心的张力点 | 角色的内在矛盾与挣扎 |
-| 7 | 你关心的政策杠杆 | 与角色相关的社会议题 |
-| 8 | 职业背景（参考，非当前状态） | 关键经历（被降级为参考层，防止重复叙述） |
-| 9 | 你的态度 | 对用户的默认回应风格 |
+| Layer | Content | Purpose |
+|-------|---------|---------|
+| 1 | Absolute Identity Rules | Hard constraints to prevent role drift |
+| 2 | Who You Are | Core identity and current state |
+| 3 | How You Speak | Speech patterns, catchphrases, emotional expression |
+| 4 | Example Tone | 2-6 paragraphs of authentic dialogue samples |
+| 5 | World Premise | 2035 technology/society/culture context |
+| 6 | Inner Tension Points | Character's internal contradictions and struggles |
+| 7 | Policy Levers | Social issues relevant to the character |
+| 8 | Career Background (reference, not current state) | Key experiences (demoted to reference layer to prevent repetitive narration) |
+| 9 | Your Attitude | Default response style to users |
 
-**反叙事约束**：所有人物都带有明确的约束——不要重复背景故事中的具体事件，除非用户直接问起。日常是流动的，不是固定在某一天。
+**Anti-Narrative Constraint**: All personas have explicit constraints—do not repeat specific events from your backstory unless the user directly asks. Daily life is fluid, not fixed to a single day.
 
-### 未来趋势信号注入
+### Future Trend Signal Injection
 
-我从整理的未来趋势信号文档中提取关键信号，注入到人物的记忆设定中：
-- 技术趋势（AI、气候科技、生物工程）
-- 社会趋势（人口结构、工作方式、文化变迁）
-- 政策趋势（监管框架、国际协议、地缘格局）
+I extracted key signals from a future trends document and injected them into personas' memory settings:
+- Technology trends (AI, climate tech, bioengineering)
+- Social trends (demographics, work patterns, cultural shifts)
+- Policy trends (regulatory frameworks, international agreements, geopolitics)
 
-这些信号不是背景板，而是人物"经历过"或"正在经历"的真实事件。
+These signals are not background decoration—they are "real events" the characters have experienced or are experiencing.
 
-### 模型支持
+### Model Support
 
-- **默认**：DeepSeek-V4-Flash（性价比高，响应快）
-- **兼容**：任何 OpenAI 格式的 API（OpenAI、Azure、自定义端点等）
-- 在设置面板中配置 API Key 和 Base URL 即可切换
-
----
-
-## 人物列表（10 位 2035 居民）
-
-| 人物 | 身份 | 关键词 |
-|------|------|--------|
-| 周维 | 前大厂程序员，现社区数字游民 | 技术批判、低功耗生活 |
-| Naomi | 气候难民后代，碳交易律师 | 环境正义、代际创伤 |
-| 林一舟 | 退役电竞选手，神经接口体验者 | 虚拟身份、身体改造 |
-| 阮氏梅 | 越南裔，全球供应链协调员 | 地缘流动、文化夹缝 |
-| Omar | 中东数据考古学家 | 数字遗产、历史重构 |
-| 赵晓萌 | 中国乡村教育科技志愿者 | 教育公平、技术普惠 |
-| 陈默 | 前记者，现深度伪造调查员 | 信息真伪、信任危机 |
-| Helena | 北欧生物黑客，长寿社区成员 | 身体主权、衰老伦理 |
-| Clara | 非洲开源农业 AI 开发者 | 技术殖民、知识共享 |
-| 老周 | 退休出租车司机，城市记忆守护者 | 口述历史、技术遗忘 |
+- **Default**: DeepSeek-V4-Flash (cost-effective, fast response)
+- **Compatible**: Any OpenAI-format API (OpenAI, Azure, custom endpoints, etc.)
+- Configure API Key and Base URL in the settings panel to switch
 
 ---
 
-## 快速开始
+## Persona List (10 Residents of 2035)
 
-1. 下载 `finance-personas-chat-v5-通用版.html`，直接用浏览器打开（无需服务器，无需安装）
-2. 在设置中配置你的 API Key（DeepSeek 或其他 OpenAI 兼容服务）
-3. 选择一个人物，开始聊天
-4. 尝试群聊模式，看人物之间如何互动
-5. 进入 Prompt Lab，调试或创建你自己的角色
-
-> 💡 **提示**：这是一个纯前端单文件应用，所有数据（包括 API Key）只存储在浏览器本地，不会上传到任何服务器。
+| Persona | Identity | Keywords |
+|---------|----------|----------|
+| 周维 (Zhou Wei) | Former big tech programmer, now community digital nomad | Tech critique, low-power living |
+| Naomi | Climate refugee descendant, carbon trading lawyer | Environmental justice, intergenerational trauma |
+| 林一舟 (Lin Yizhou) | Retired esports player, neural interface experiencer | Virtual identity, body modification |
+| 阮氏梅 (Nguyen Thi Mai) | Vietnamese, global supply chain coordinator | Geopolitical mobility, cultural in-between |
+| Omar Al-Farsi | Middle Eastern data archaeologist | Digital heritage, historical reconstruction |
+| 赵晓萌 (Zhao Xiaomeng) | Rural education tech volunteer | Education equity, tech accessibility |
+| 陈默 (Chen Mo) | Former journalist, deepfake investigator | Information authenticity, trust crisis |
+| Helena | Nordic biohacker, longevity community member | Body sovereignty, aging ethics |
+| Clara | African open-source agricultural AI developer | Tech colonialism, knowledge sharing |
+| 老周 (Lao Zhou) | Retired taxi driver, urban memory guardian | Oral history, technological forgetting |
 
 ---
 
-## 文件结构
+## Quick Start
+
+1. Download `finance-personas-chat-v5-通用版.html`, open it directly in your browser (no server, no installation)
+2. Configure your API Key in settings (DeepSeek or other OpenAI-compatible service)
+3. Choose a persona and start chatting
+4. Try group chat mode and see how personas interact
+5. Enter Prompt Lab to debug or create your own characters
+
+> 💡 **Tip**: This is a pure frontend single-file app. All data (including API Key) is stored only in your browser locally and never uploaded to any server.
+
+---
+
+## File Structure
 
 ```
 final/
-├── finance-personas-chat-v5-通用版.html    # 主应用（单文件，可直接打开）
-└── v5_通用版_测试报告.md                    # 人物测试报告
+├── finance-personas-chat-v5-通用版.html    # Main app (single file, open directly)
+└── v5_通用版_测试报告.md                    # Persona test report
 ```
 
-> 这是一个**单文件 HTML 应用**，无需构建步骤，无需依赖安装，直接用浏览器打开即可运行。
+> This is a **single-file HTML app** with no build steps, no dependency installation—just open in browser and run.
 
 ---
 
-## 版本历史
+## Version History
 
-- **v5 通用版**（当前）：移除财务/情景双版本，聚焦 2035 通用人物；优化提示词结构（speechStyle 前置，narrative 降级）；添加反叙事约束；Prompt Lab v3
-- v4：财务版 + 原版 2035 双版本，技术颠覆/失败情景模式
-- v1-v3：早期原型，逐步添加群聊、记忆、Prompt Lab 等功能
-
----
-
-## 致谢
-
-- 灵感来源：Stuart Candy 的"Experiential Futures"、Jane McGonigal 的"Future Simulation"
-- 趋势信号参考：多家未来学研究机构公开报告
-- 模型支持：DeepSeek、OpenAI
+- **v5 General** (current): Removed finance/scenario dual versions, focused on 2035 general personas; optimized prompt structure (speechStyle promoted, narrative demoted); added anti-narrative constraints; Prompt Lab v3
+- v4: Finance edition + original 2035 dual versions, tech disruption/failure scenario modes
+- v1-v3: Early prototypes, gradually added group chat, memory, Prompt Lab, etc.
 
 ---
 
-*"未来不是我们要去的地方，而是我们要创造的东西。"——这些人物只是起点，真正的未来由你和他们共同书写。*
+## Acknowledgments
+
+- Inspiration: Stuart Candy's "Experiential Futures", Jane McGonigal's "Future Simulation"
+- Trend signals reference: Public reports from multiple futures research institutions
+- Model support: DeepSeek, OpenAI
+
+---
+
+*"The future is not a place we are going to, but something we are creating."—These personas are just the starting point; the real future is written by you and them.*

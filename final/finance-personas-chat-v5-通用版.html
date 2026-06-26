@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1410,7 +1410,7 @@
       <div class="setting-item full">
         <label>System Prompt 前缀（全局）</label>
         <textarea id="system-prefix" placeholder="可选：在所有角色设定前追加的全局指令"></textarea>
-        <span class="hint">例如："请始终用中文回答。保持角色一致性，不要跳出角色。"</span>
+        <span class="hint">例如："Respond in the user's language. Stay in character."</span>
       </div>
       <div class="setting-item full" style="display:flex; gap:12px; align-items:center;">
         <button class="btn-primary" id="test-api">测试连接</button>
@@ -3171,7 +3171,7 @@ function getAssembledPrompt(layers, format){
 
         // 记录历史
         recordRun({
-          time: new Date().toLocaleString('zh-CN'),
+          time: new Date().toLocaleString('en-US'),
           question,
           schemeName: schemeId==='__current__'?'当前编辑':labSchemes.find(x=>x.id===+schemeId)?.name||'未知',
           framework: labFramework,
@@ -3553,7 +3553,7 @@ function appendMessage(msg){
   div.textContent = msg.content;
   const time = document.createElement('div');
   time.className = 'msg-time';
-  time.textContent = new Date().toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit'});
+  time.textContent = new Date().toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});
   div.appendChild(time);
   container.appendChild(div);
   container.scrollTop = container.scrollHeight;
@@ -3584,7 +3584,7 @@ function appendBubble(content, role, delay) {
     div.textContent = content;
     const time = document.createElement('div');
     time.className = 'msg-time';
-    time.textContent = new Date().toLocaleTimeString('zh-CN', {hour:'2-digit',minute:'2-digit'});
+    time.textContent = new Date().toLocaleTimeString('en-US', {hour:'2-digit',minute:'2-digit'});
     div.appendChild(time);
     container.appendChild(div);
     container.scrollTop = container.scrollHeight;
@@ -3845,7 +3845,7 @@ function exportChatHistory(){
   md += `**角色**：${p ? p.name + ' · ' + p.city + ' · ' + p.job : '未知'}\n`;
   md += `**时间线**：2035年（通用版）
 `;
-  md += `**导出时间**：${new Date().toLocaleString('zh-CN')}\n\n`;
+  md += `**Export Time**: ${new Date().toLocaleString('en-US')}\n\n`;
   md += `---\n\n`;
   chatHistory.forEach(msg => {
     const roleLabel = msg.role === 'user' ? '你' : (p ? p.name : 'AI');
@@ -3869,7 +3869,7 @@ function exportGroupChatHistory(){
   const dateStr = new Date().toISOString().split('T')[0];
   let md = `# 未来人物谈 · 群聊记录\n\n`;
   md += `**时间线**：2035年\n`;
-  md += `**导出时间**：${new Date().toLocaleString('zh-CN')}\n\n`;
+  md += `**Export Time**: ${new Date().toLocaleString('en-US')}\n\n`;
   md += `---\n\n`;
   let currentRound = 0;
   groupChatHistory.forEach(msg => {
@@ -4437,7 +4437,7 @@ function appendGroupMessage(msg) {
         <div class="msg-stance ${stance}">${STANCE_LABELS[stance] || stance}</div>
       </div>
       <div class="msg-body">${msg.content}</div>
-      <div class="msg-time">${new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' })}</div>
+      <div class="msg-time">${new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</div>
     `;
     container.appendChild(div);
   }
