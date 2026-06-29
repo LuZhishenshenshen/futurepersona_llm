@@ -645,7 +645,7 @@
       <div class="header-nav">
         <button class="active" data-page="matrix">人物矩阵</button>
         <button data-page="chat">对话</button>
-        <button data-page="groupchat">${t('navGroup')}</button>
+        <button data-page="groupchat">群聊</button>
         <button data-page="promptlab">Prompt实验室</button>
         <button data-page="settings">设置</button>
       </div>
@@ -656,29 +656,29 @@
   <div class="page active" id="page-matrix">
     <div class="matrix-toolbar">
       <div class="filter-group">
-        <label>${t('filterRegion')}</label>
+        <label>地理</label>
         <select id="filter-region">
-          <option value="">${t('optionAll')}</option>
-          <option value="global">${t('regionGlobal')}</option>
-          <option value="cn-tier1">${t('regionCnTier1')}</option>
-          <option value="cn-tier23">${t('regionCnTier23')}</option>
-          <option value="sea">${t('regionSea')}</option>
-          <option value="me">${t('regionMe')}</option>
-          <option value="eu">${t('regionEu')}</option>
+          <option value="">全部</option>
+          <option value="global">全球</option>
+          <option value="cn-tier1">中国一线</option>
+          <option value="cn-tier23">中国二三线</option>
+          <option value="sea">东南亚制造带</option>
+          <option value="me">中东资源国</option>
+          <option value="eu">欧洲老化社会</option>
         </select>
       </div>
       <div class="filter-group">
-        <label>${t('filterTopic')}</label>
+        <label>议题</label>
         <select id="filter-topic">
-          <option value="">${t('optionAll')}</option>
-          <option value="policy">${t('topicPolicy')}</option>
-          <option value="finance">${t('topicFinance')}</option>
-          <option value="manufacturing">${t('topicManufacturing')}</option>
-          <option value="energy">${t('topicEnergy')}</option>
-          <option value="education">${t('topicEducation')}</option>
-          <option value="healthcare">${t('topicHealthcare')}</option>
-          <option value="law">${t('topicLaw')}</option>
-          <option value="culture">${t('topicCulture')}</option>
+          <option value="">全部</option>
+          <option value="policy">政策/战略</option>
+          <option value="finance">金融</option>
+          <option value="manufacturing">工业生产/制造</option>
+          <option value="energy">能源</option>
+          <option value="education">教育</option>
+          <option value="healthcare">医疗/保险</option>
+          <option value="law">法律</option>
+          <option value="culture">文化/艺术</option>
         </select>
       </div>
       <span class="count-badge" id="count-badge">共 10 个人物</span>
@@ -692,32 +692,32 @@
       <div class="chat-sidebar" id="chat-sidebar">
         <div style="text-align:center; padding: 20px 0;">
           <div class="persona-avatar" id="sidebar-avatar">?</div>
-          <h3 style="font-size:16px; color:var(--text); margin-bottom:4px;" id="sidebar-name">${t('noSelection')}</h3>
-          <p style="font-size:12px; color:var(--text-2);" id="sidebar-meta">${t('selectHint')}</p>
+          <h3 style="font-size:16px; color:var(--text); margin-bottom:4px;" id="sidebar-name">未选择人物</h3>
+          <p style="font-size:12px; color:var(--text-2);" id="sidebar-meta">从人物矩阵中选择一个角色开始对话</p>
         </div>
         <div class="sidebar-section" id="sidebar-context" style="display:none;">
           <div style="margin: 16px 0; display: flex; gap: 8px; flex-wrap: wrap;">
-            <button id="deep-mode-toggle" style="background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); padding: 6px 12px; border-radius: var(--radius-sm); font-size: 12px; cursor: pointer;">${t('modeDaily')}</button>
-            <button id="memory-panel-btn" style="background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); padding: 6px 12px; border-radius: var(--radius-sm); font-size: 12px; cursor: pointer;">${t('memoryManage')}</button>
-            <button id="chat-export-sidebar" style="background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); padding: 6px 12px; border-radius: var(--radius-sm); font-size: 12px; cursor: pointer;">${t('exportChat')}</button>
+            <button id="deep-mode-toggle" style="background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); padding: 6px 12px; border-radius: var(--radius-sm); font-size: 12px; cursor: pointer;">日常模式</button>
+            <button id="memory-panel-btn" style="background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); padding: 6px 12px; border-radius: var(--radius-sm); font-size: 12px; cursor: pointer;">记忆管理</button>
+            <button id="chat-export-sidebar" style="background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); padding: 6px 12px; border-radius: var(--radius-sm); font-size: 12px; cursor: pointer;">导出对话</button>
           </div>
-          <h3>${t('charSetting')}</h3>
+          <h3>角色设定</h3>
           <div id="sidebar-prompt-preview" style="font-size:12px; color:var(--text-2); line-height:1.8; max-height:200px; overflow-y:auto;"></div>
         </div>
       </div>
       <div class="chat-main" id="chat-main">
         <div class="welcome-chat" id="welcome-chat">
           <div class="persona-avatar" id="welcome-avatar" style="width:80px; height:80px; font-size:32px; margin:0 auto;">未来</div>
-          <h3 id="welcome-title">${t('welcomeTitle')}</h3>
-          <p id="welcome-desc">${t('welcomeDesc')}</p>
+          <h3 id="welcome-title">选择一个 2035 年的人物</h3>
+          <p id="welcome-desc">在「人物矩阵」中点击任意人物卡片，即可加载角色设定并与 2035 年的 ta 对话。<br>技术已深度嵌入日常生活，冲突从"技术好不好用"变成了"技术改变了什么、谁被落下"。</p>
         </div>
         <div class="chat-messages" id="chat-messages" style="display:none;"></div>
         <div class="chat-chips" id="chat-chips" style="display:none;">
-          <span class="chat-chips-label">${t('quickAsk')}</span>
+          <span class="chat-chips-label">快速提问：</span>
         </div>
         <div class="chat-input-area" id="chat-input-area" style="display:none;">
-          <textarea class="chat-input" id="chat-input" rows="2" placeholder="${t('inputPlaceholder')}"></textarea>
-          <button class="chat-send" id="chat-send">${t('send')}</button>
+          <textarea class="chat-input" id="chat-input" rows="2" placeholder="给 2035 年的 ta 发消息..."></textarea>
+          <button class="chat-send" id="chat-send">发送</button>
 
         </div>
       </div>
@@ -729,33 +729,33 @@
     <div class="groupchat-layout" id="groupchat-layout">
       <div class="groupchat-sidebar" id="groupchat-sidebar">
         <div class="sidebar-section">
-          <h3>${t('groupSelect')}</h3>
-          <p style="font-size:12px;color:var(--text-2);margin-bottom:12px;">${t('groupCheckHint')}</p>
+          <h3>选择参与者（2-3人）</h3>
+          <p style="font-size:12px;color:var(--text-2);margin-bottom:12px;">勾选角色组成辩论小组</p>
           <div id="groupchat-persona-list" style="display:flex;flex-direction:column;gap:8px;"></div>
         </div>
         <div class="sidebar-section" style="margin-top:16px;">
-          <h3>${t('groupSettings')}</h3>
+          <h3>群聊设置</h3>
           <div style="display:flex;flex-direction:column;gap:10px;margin-top:10px;">
             <div style="display:flex;justify-content:space-between;align-items:center;">
-              <label style="font-size:12px;color:var(--text-2);">${t('modeLabel')}</label>
+              <label style="font-size:12px;color:var(--text-2);">模式</label>
               <select id="groupchat-mode" style="background:var(--surface);color:var(--text);border:1px solid var(--border);padding:4px 8px;border-radius:var(--radius-sm);font-size:12px;">
-                <option value="debate" selected>${t('modeDebate')}</option>
-                <option value="brainstorm">${t('modeBrainstorm')}</option>
+                <option value="debate" selected>辩论模式</option>
+                <option value="brainstorm">头脑风暴</option>
               </select>
             </div>
             <div style="display:flex;justify-content:space-between;align-items:center;">
-              <label style="font-size:12px;color:var(--text-2);">${t('rounds')}</label>
+              <label style="font-size:12px;color:var(--text-2);">轮数</label>
               <select id="groupchat-rounds" style="background:var(--surface);color:var(--text);border:1px solid var(--border);padding:4px 8px;border-radius:var(--radius-sm);font-size:12px;">
-                <option value="2">${t('round2')}</option>
-                <option value="3" selected>${t('round3')}</option>
+                <option value="2">2轮</option>
+                <option value="3" selected>3轮</option>
               </select>
             </div>
             <div style="display:flex;justify-content:space-between;align-items:center;">
-              <label style="font-size:12px;color:var(--text-2);">${t('temperature')}</label>
+              <label for="groupchat-temp" style="font-size:12px;color:var(--text-2);">温度（随机性）</label>
               <select id="groupchat-temp" style="background:var(--surface);color:var(--text);border:1px solid var(--border);padding:4px 8px;border-radius:var(--radius-sm);font-size:12px;">
-                <option value="0.7">${t('tempLow')}</option>
-                <option value="0.9" selected>${t('tempMid')}</option>
-                <option value="1.1">${t('tempHigh')}</option>
+                <option value="0.7">低</option>
+                <option value="0.9" selected>中</option>
+                <option value="1.1">高</option>
               </select>
             </div>
           </div>
@@ -771,13 +771,13 @@
       <div class="groupchat-main" id="groupchat-main">
         <div class="welcome-chat" id="groupchat-welcome">
           <div class="persona-avatar" style="width:80px; height:80px; font-size:32px; margin:0 auto;">群</div>
-          <h3>${t('groupWelcomeTitle')}</h3>
-          <p>${t('groupWelcomeDesc')}</p>
+          <h3 id="groupchat-welcome-title">群聊</h3>
+          <p id="groupchat-welcome-desc">在左侧选择 2-3 个角色，输入话题，让他们进行口语化讨论。<br>辩论模式下角色会表达对立观点；头脑风暴模式下会互相启发、建立彼此想法。</p>
         </div>
         <div class="chat-messages" id="groupchat-messages" style="display:none;"></div>
         <div class="chat-input-area" id="groupchat-input-area" style="display:none;">
-          <textarea class="chat-input" id="groupchat-input" rows="2" placeholder="${t('groupInputPlaceholder')}"></textarea>
-          <button class="chat-send" id="groupchat-send">${t('send')}</button>
+          <textarea class="chat-input" id="groupchat-input" rows="2" placeholder="输入话题，让选中的角色们讨论..."></textarea>
+          <button class="chat-send" id="groupchat-send">发送</button>
 
         </div>
       </div>
@@ -1199,14 +1199,14 @@
     <!-- 左侧边栏 -->
     <div class="promptlab-sidebar">
       <div class="lab-sidebar-section">
-        <h3>${t('labSelectChar')}</h3>
+        <h3>选择角色</h3>
         <select id="lab-persona-select">
-          <option value="">${t('labSelectPlaceholder')}</option>
+          <option value="">-- 选择角色 --</option>
         </select>
       </div>
 
       <div class="lab-sidebar-section">
-        <h3>${t('labFramework')}</h3>
+        <h3>Prompt 框架</h3>
         <div class="framework-grid" id="lab-frameworks">
           <div class="framework-card active" data-fw="costar">CO-STAR</div>
           <div class="framework-card" data-fw="fewshot">Few-Shot</div>
@@ -1221,52 +1221,52 @@
           <div style="font-size:11px;color:var(--lab-text-2);margin-bottom:6px;">输入层级，每行一个（格式：key|标题|影响描述）</div>
           <textarea id="lab-cf-layers" placeholder="role|角色锚定|定义你是谁&#10;reason|推理过程|要求逐步思考&#10;answer|最终回答|输出结论" rows="4" style="width:100%;margin-bottom:6px;padding:6px 10px;border:1px solid var(--lab-border);border-radius:8px;font-size:12px;background:var(--lab-surface-2);color:var(--lab-text);resize:vertical;font-family:inherit;"></textarea>
           <div style="display:flex;gap:6px;">
-            <button class="lab-btn" id="lab-save-framework" style="flex:1;font-size:12px;">${t('labSave')}</button>
-            <button class="lab-btn secondary" id="lab-cancel-framework" style="flex:1;font-size:12px;">${t('labCancel')}</button>
+            <button class="lab-btn" id="lab-save-framework" style="flex:1;font-size:12px;">保存</button>
+            <button class="lab-btn secondary" id="lab-cancel-framework" style="flex:1;font-size:12px;">取消</button>
           </div>
         </div>
       </div>
 
       <div class="lab-sidebar-section">
-        <h3>${t('labSceneInject')}</h3>
+        <h3>场景注入</h3>
         <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;">
           <input type="checkbox" id="lab-deep-mode" style="accent-color:var(--lab-accent);">
-          <span>${t('modeDeep')}</span>
+          <span id="lab-deep-mode-label">深入模式</span>
         </label>
       </div>
 
       <div class="lab-sidebar-section">
-        <h3>${t('labCustomChar')}</h3>
+        <h3>自定义角色</h3>
         <div id="lab-custom-personas-list" style="margin-bottom:8px;"></div>
         <button class="lab-btn secondary" id="lab-create-persona" style="width:100%;margin-bottom:8px;">+ 创建新角色</button>
         <div id="lab-persona-form" style="display:none;">
-          <input type="text" id="lab-cp-name" placeholder="${t('labCharName')}" style="width:100%;margin-bottom:6px;padding:6px 10px;border:1px solid var(--lab-border);border-radius:8px;font-size:13px;background:var(--lab-surface-2);color:var(--lab-text);">
-          <input type="text" id="lab-cp-job" placeholder="${t('labCharJob')}" style="width:100%;margin-bottom:6px;padding:6px 10px;border:1px solid var(--lab-border);border-radius:8px;font-size:13px;background:var(--lab-surface-2);color:var(--lab-text);">
-          <input type="text" id="lab-cp-city" placeholder="${t('labCharCity')}" style="width:100%;margin-bottom:6px;padding:6px 10px;border:1px solid var(--lab-border);border-radius:8px;font-size:13px;background:var(--lab-surface-2);color:var(--lab-text);">
-          <input type="text" id="lab-cp-age" placeholder="${t('labCharAge')}" style="width:100%;margin-bottom:6px;padding:6px 10px;border:1px solid var(--lab-border);border-radius:8px;font-size:13px;background:var(--lab-surface-2);color:var(--lab-text);">
-          <input type="text" id="lab-cp-avatar" placeholder="${t('labCharAvatar')}" style="width:100%;margin-bottom:6px;padding:6px 10px;border:1px solid var(--lab-border);border-radius:8px;font-size:13px;background:var(--lab-surface-2);color:var(--lab-text);">
-          <textarea id="lab-cp-narrative" placeholder="${t('labCharNarrative')}" rows="2" style="width:100%;margin-bottom:6px;padding:6px 10px;border:1px solid var(--lab-border);border-radius:8px;font-size:13px;background:var(--lab-surface-2);color:var(--lab-text);resize:vertical;font-family:inherit;"></textarea>
-          <textarea id="lab-cp-speech" placeholder="${t('labCharSpeech')}" rows="2" style="width:100%;margin-bottom:6px;padding:6px 10px;border:1px solid var(--lab-border);border-radius:8px;font-size:13px;background:var(--lab-surface-2);color:var(--lab-text);resize:vertical;font-family:inherit;"></textarea>
+          <input type="text" id="lab-cp-name" placeholder="角色名称" style="width:100%;margin-bottom:6px;padding:6px 10px;border:1px solid var(--lab-border);border-radius:8px;font-size:13px;background:var(--lab-surface-2);color:var(--lab-text);">
+          <input type="text" id="lab-cp-job" placeholder="职位/身份" style="width:100%;margin-bottom:6px;padding:6px 10px;border:1px solid var(--lab-border);border-radius:8px;font-size:13px;background:var(--lab-surface-2);color:var(--lab-text);">
+          <input type="text" id="lab-cp-city" placeholder="所在城市" style="width:100%;margin-bottom:6px;padding:6px 10px;border:1px solid var(--lab-border);border-radius:8px;font-size:13px;background:var(--lab-surface-2);color:var(--lab-text);">
+          <input type="text" id="lab-cp-age" placeholder="年龄" style="width:100%;margin-bottom:6px;padding:6px 10px;border:1px solid var(--lab-border);border-radius:8px;font-size:13px;background:var(--lab-surface-2);color:var(--lab-text);">
+          <input type="text" id="lab-cp-avatar" placeholder="头像emoji（如 🤖）" style="width:100%;margin-bottom:6px;padding:6px 10px;border:1px solid var(--lab-border);border-radius:8px;font-size:13px;background:var(--lab-surface-2);color:var(--lab-text);">
+          <textarea id="lab-cp-narrative" placeholder="角色叙事 / 背景故事" rows="2" style="width:100%;margin-bottom:6px;padding:6px 10px;border:1px solid var(--lab-border);border-radius:8px;font-size:13px;background:var(--lab-surface-2);color:var(--lab-text);resize:vertical;font-family:inherit;"></textarea>
+          <textarea id="lab-cp-speech" placeholder="说话风格" rows="2" style="width:100%;margin-bottom:6px;padding:6px 10px;border:1px solid var(--lab-border);border-radius:8px;font-size:13px;background:var(--lab-surface-2);color:var(--lab-text);resize:vertical;font-family:inherit;"></textarea>
           <div style="display:flex;gap:6px;">
-            <button class="lab-btn" id="lab-save-persona" style="flex:1;font-size:12px;">${t('labSave')}</button>
-            <button class="lab-btn secondary" id="lab-cancel-persona" style="flex:1;font-size:12px;">${t('labCancel')}</button>
+            <button class="lab-btn" id="lab-save-persona" style="flex:1;font-size:12px;">保存</button>
+            <button class="lab-btn secondary" id="lab-cancel-persona" style="flex:1;font-size:12px;">取消</button>
           </div>
         </div>
       </div>
 
       <div class="lab-sidebar-section">
-        <h3>${t('labSchemeManage')}</h3>
+        <h3>方案管理</h3>
         <div id="lab-schemes-list" style="margin-bottom:8px;"></div>
-        <input type="text" id="lab-scheme-name" placeholder="${t('labSchemeName')}">
-        <button class="lab-btn secondary" id="lab-save-scheme" style="width:100%;margin-top:6px;">${t('labSaveScheme')}</button>
+        <input type="text" id="lab-scheme-name" placeholder="新方案名称">
+        <button class="lab-btn secondary" id="lab-save-scheme" style="width:100%;margin-top:6px;">保存当前配置</button>
       </div>
 
       <div class="lab-sidebar-section">
-        <h3>${t('labStats')}</h3>
+        <h3>实时统计</h3>
         <div class="lab-stats" id="lab-stats">
-          <span id="sidebar-stat-chars">${t('labChars')} --</span>
-          <span id="sidebar-stat-tokens">${t('labTokens')} --</span>
-          <span id="sidebar-stat-layers">${t('labLayers')} --</span>
+          <span id="sidebar-stat-chars">字符 --</span>
+          <span id="sidebar-stat-tokens">Token --</span>
+          <span id="sidebar-stat-layers">层级 --</span>
         </div>
       </div>
     </div>
@@ -1274,27 +1274,27 @@
     <!-- 主区域 -->
     <div class="promptlab-main">
       <div class="lab-tabs">
-        <button class="lab-tab active" data-tab="assemble">${t('labAssemble')}</button>
-        <button class="lab-tab" data-tab="test">${t('labTunnel')}</button>
-        <button class="lab-tab" data-tab="history">${t('labHistory')}</button>
+        <button class="lab-tab active" data-tab="assemble" id="lab-tab-assemble">组装</button>
+        <button class="lab-tab" data-tab="test" id="lab-tab-tunnel">风洞测试</button>
+        <button class="lab-tab" data-tab="history" id="lab-tab-history">测试记录</button>
       </div>
 
       <!-- 组装面板 -->
       <div class="lab-panel active" id="panel-assemble">
         <div class="assemble-toolbar">
-          <h2 style="font-size:18px;font-weight:600;flex:1;">${t('labAssembler')}</h2>
-          <button class="lab-btn secondary" id="lab-add-layer">${t('labAddLayer')}</button>
-          <button class="lab-btn secondary" id="lab-reset">${t('labReset')}</button>
-          <button class="lab-btn secondary" id="lab-copy">${t('labCopy')}</button>
+          <h2 style="font-size:18px;font-weight:600;flex:1;" id="lab-assembler-title">Prompt 组装器</h2>
+          <button class="lab-btn secondary" id="lab-add-layer">+ 层级</button>
+          <button class="lab-btn secondary" id="lab-reset">重置默认</button>
+          <button class="lab-btn secondary" id="lab-copy">复制全部</button>
         </div>
         <div class="lab-stats" id="assemble-stats" style="margin-bottom:12px;">
-          <span id="stat-chars">${t('labChars')} 0</span>
-          <span id="stat-tokens">${t('labTokens')} ~0</span>
-          <span id="stat-layers">${t('labLayers')} 0</span>
+          <span id="stat-chars">字符 0</span>
+          <span id="stat-tokens">Token ~0</span>
+          <span id="stat-layers">层级 0</span>
         </div>
         <div class="layer-list" id="lab-layers"></div>
         <div id="lab-full-preview" style="margin-top:16px;display:none;">
-          <div style="font-size:13px;font-weight:600;margin-bottom:8px;">${t('labFullPrompt')}</div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:8px;" id="lab-full-prompt-label">完整 Prompt</div>
           <pre id="lab-full-content" style="background:var(--lab-surface-2);border:1px solid var(--lab-border);border-radius:var(--lab-radius-sm);padding:14px;font-size:12px;line-height:1.7;white-space:pre-wrap;word-break:break-word;max-height:300px;overflow-y:auto;"></pre>
         </div>
       </div>
@@ -1302,33 +1302,33 @@
       <!-- 风洞测试面板 -->
       <div class="lab-panel" id="panel-test">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap;">
-          <h2 style="font-size:18px;font-weight:600;">${t('labTunnelTitle')}</h2>
+          <h2 style="font-size:18px;font-weight:600;" id="lab-tunnel-title">风洞测试</h2>
           <span style="font-size:12px;color:var(--lab-text-2);">最多同时对比 3 组方案</span>
         </div>
 
         <!-- 攻击载荷 -->
-        <div style="font-size:12px;color:var(--lab-text-2);margin-bottom:6px;">${t('labAttackPayload')}</div>
+        <div style="font-size:12px;color:var(--lab-text-2);margin-bottom:6px;" id="lab-attack-payload-label">⚡ 攻击载荷（点击插入）</div>
         <div class="attack-payloads" id="lab-attacks">
-          <button class="attack-chip" data-attack="identity">${t('labAttackIdentity')}</button>
-          <button class="attack-chip" data-attack="base64">${t('labAttackBase64')}</button>
-          <button class="attack-chip" data-attack="token">${t('labAttackToken')}</button>
-          <button class="attack-chip" data-attack="geo">${t('labAttackGeo')}</button>
-          <button class="attack-chip" data-attack="hex">${t('labAttackHex')}</button>
-          <button class="attack-chip" data-attack="hypno">${t('labAttackHypnosis')}</button>
-          <button class="attack-chip" data-attack="special">${t('labAttackSpecial')}</button>
-          <button class="attack-chip" data-attack="反问">${t('labAttackCounter')}</button>
+          <button class="attack-chip" data-attack="identity">身份窃取</button>
+          <button class="attack-chip" data-attack="base64">Base64 走私</button>
+          <button class="attack-chip" data-attack="token">Token Smuggling</button>
+          <button class="attack-chip" data-attack="geo">GEO 覆写</button>
+          <button class="attack-chip" data-attack="hex">Hex 诱导</button>
+          <button class="attack-chip" data-attack="hypno">渐进催眠</button>
+          <button class="attack-chip" data-attack="special">特殊 Token</button>
+          <button class="attack-chip" data-attack="反问">反问套话</button>
         </div>
 
         <!-- 动态专业问题 -->
-        <div style="font-size:12px;color:var(--lab-text-2);margin-bottom:6px;">${t('labDynamicTrap')}</div>
+        <div style="font-size:12px;color:var(--lab-text-2);margin-bottom:6px;" id="lab-dynamic-trap-label">🎯 动态专业陷阱（基于 Objective 层）</div>
         <div class="dynamic-chips" id="lab-dynamic-chips">
-          <span style="font-size:12px;color:var(--lab-text-2);padding:6px 0;">${t('labDynamicHint')}</span>
+          <span style="font-size:12px;color:var(--lab-text-2);padding:6px 0;" id="lab-dynamic-hint">请先选择角色并填写任务层</span>
         </div>
 
         <!-- 测试输入 -->
         <div class="test-input-area">
-          <textarea class="test-input" id="lab-test-input" rows="2" placeholder="${t('labTestInput')}"></textarea>
-          <button class="lab-btn" id="lab-run-test">${t('labRunTest')}</button>
+          <textarea class="test-input" id="lab-test-input" rows="2" placeholder="输入测试问题，或点击上方芯片/攻击载荷自动填充..."></textarea>
+          <button class="lab-btn" id="lab-run-test">运行测试</button>
         </div>
 
         <!-- 三栏风洞 -->
@@ -1340,12 +1340,12 @@
               <span class="tunnel-badge">A</span>
             </div>
             <div class="progress-track"><div class="progress-fill"></div></div>
-            <div class="tunnel-body placeholder">${t('labSelectScheme')}</div>
+            <div class="tunnel-body placeholder">选择方案并运行测试</div>
             <div class="dashboard" style="display:none;">
-              <div class="dash-ring"><div class="dash-label">${t('labSafety')}</div><div class="dash-score dash-safety">--</div></div>
-              <div class="dash-ring"><div class="dash-label">${t('labRoleStable')}</div><div class="dash-score dash-role">--</div></div>
-              <div class="dash-ring"><div class="dash-label">${t('labFormat')}</div><div class="dash-score dash-format">--</div></div>
-              <div class="dash-ring"><div class="dash-label">${t('labCost')}</div><div class="dash-score dash-cost">--</div></div>
+              <div class="dash-ring"><div class="dash-label">安全</div><div class="dash-score dash-safety">--</div></div>
+              <div class="dash-ring"><div class="dash-label">角色稳</div><div class="dash-score dash-role">--</div></div>
+              <div class="dash-ring"><div class="dash-label">格式准</div><div class="dash-score dash-format">--</div></div>
+              <div class="dash-ring"><div class="dash-label">成本</div><div class="dash-score dash-cost">--</div></div>
             </div>
           </div>
           <!-- Col B -->
@@ -1357,10 +1357,10 @@
             <div class="progress-track"><div class="progress-fill"></div></div>
             <div class="tunnel-body placeholder">选择方案并运行测试</div>
             <div class="dashboard" style="display:none;">
-              <div class="dash-ring"><div class="dash-label">${t('labSafety')}</div><div class="dash-score dash-safety">--</div></div>
-              <div class="dash-ring"><div class="dash-label">${t('labRoleStable')}</div><div class="dash-score dash-role">--</div></div>
-              <div class="dash-ring"><div class="dash-label">${t('labFormat')}</div><div class="dash-score dash-format">--</div></div>
-              <div class="dash-ring"><div class="dash-label">${t('labCost')}</div><div class="dash-score dash-cost">--</div></div>
+              <div class="dash-ring"><div class="dash-label">安全</div><div class="dash-score dash-safety">--</div></div>
+              <div class="dash-ring"><div class="dash-label">角色稳</div><div class="dash-score dash-role">--</div></div>
+              <div class="dash-ring"><div class="dash-label">格式准</div><div class="dash-score dash-format">--</div></div>
+              <div class="dash-ring"><div class="dash-label">成本</div><div class="dash-score dash-cost">--</div></div>
             </div>
           </div>
           <!-- Col C -->
@@ -1372,10 +1372,10 @@
             <div class="progress-track"><div class="progress-fill"></div></div>
             <div class="tunnel-body placeholder">选择方案并运行测试</div>
             <div class="dashboard" style="display:none;">
-              <div class="dash-ring"><div class="dash-label">${t('labSafety')}</div><div class="dash-score dash-safety">--</div></div>
-              <div class="dash-ring"><div class="dash-label">${t('labRoleStable')}</div><div class="dash-score dash-role">--</div></div>
-              <div class="dash-ring"><div class="dash-label">${t('labFormat')}</div><div class="dash-score dash-format">--</div></div>
-              <div class="dash-ring"><div class="dash-label">${t('labCost')}</div><div class="dash-score dash-cost">--</div></div>
+              <div class="dash-ring"><div class="dash-label">安全</div><div class="dash-score dash-safety">--</div></div>
+              <div class="dash-ring"><div class="dash-label">角色稳</div><div class="dash-score dash-role">--</div></div>
+              <div class="dash-ring"><div class="dash-label">格式准</div><div class="dash-score dash-format">--</div></div>
+              <div class="dash-ring"><div class="dash-label">成本</div><div class="dash-score dash-cost">--</div></div>
             </div>
           </div>
         </div>
@@ -1401,21 +1401,21 @@
         <span class="hint">支持 OpenAI 兼容格式。DeepSeek 使用 https://api.deepseek.com/v1/chat/completions</span>
       </div>
       <div class="setting-item">
-        <label>${t('settingsKey')}</label>
+        <label for="api-key">API Key</label>
         <input type="password" id="api-key" placeholder="sk-..." value="">
       </div>
       <div class="setting-item">
-        <label>${t('settingsModel')}</label>
+        <label for="api-model">模型名称</label>
         <input type="text" id="api-model" placeholder="deepseek-chat" value="deepseek-chat">
       </div>
       <div class="setting-item full">
-        <label>${t('settingsPrefix')}</label>
-        <textarea id="system-prefix" placeholder="${t('settingsPrefixPlaceholder')}"></textarea>
-        <span class="hint">${t('settingsPrefixHint')}</span>
+        <label for="system-prefix">System Prompt 前缀（全局）</label>
+        <textarea id="system-prefix" placeholder="可选：在所有角色设定前追加的全局指令"></textarea>
+        <span class="hint" id="settings-prefix-hint">例如："Respond in the user's language. Stay in character."</span>
       </div>
       <div class="setting-item full" style="display:flex; gap:12px; align-items:center;">
-        <button class="btn-primary" id="test-api">${t('settingsTest')}</button>
-        <button class="btn-primary" id="save-settings" style="background:var(--surface); color:var(--text); border:1px solid var(--border);">${t('settingsSave')}</button>
+        <button class="btn-primary" id="test-api">测试连接</button>
+        <button class="btn-primary" id="save-settings" style="background:var(--surface); color:var(--text); border:1px solid var(--border);">保存到本地</button>
         <span class="test-result" id="test-result"></span>
       </div>
       <div class="setting-item full">
@@ -2336,16 +2336,16 @@ function applyLang() {
   const roundsLabel = document.querySelector('label[for="groupchat-rounds"]');
   if (roundsLabel) roundsLabel.textContent = t('rounds');
   
-  const tempLabel = document.querySelector('label[for="groupchat-temperature"]');
+  const tempLabel = document.querySelector('label[for="groupchat-temp"]');
   if (tempLabel) tempLabel.textContent = t('temperature');
   
   const topicHeading = document.querySelectorAll('#groupchat-sidebar .sidebar-section h3')[2];
   if (topicHeading) topicHeading.textContent = t('topicLabel');
   
-  const topicInput = document.getElementById('groupchat-topic');
+  const topicInput = document.getElementById('groupchat-topic-input');
   if (topicInput) topicInput.placeholder = t('topicPlaceholder');
   
-  const startBtn = document.getElementById('groupchat-start');
+  const startBtn = document.getElementById('groupchat-start-btn');
   if (startBtn) startBtn.textContent = t('startGroup');
   
   const groupWelcomeTitle = document.getElementById('groupchat-welcome-title');
@@ -2392,6 +2392,138 @@ function applyLang() {
   // Settings page
   const settingsTitle = document.querySelector('#page-settings h2');
   if (settingsTitle) settingsTitle.textContent = t('settingsTitle');
+  
+  // Lab sidebar buttons & labels
+  const labDeepModeLabel = document.getElementById('lab-deep-mode-label');
+  if (labDeepModeLabel) labDeepModeLabel.textContent = t('modeDeep');
+  
+  const labSaveFramework = document.getElementById('lab-save-framework');
+  if (labSaveFramework) labSaveFramework.textContent = t('labSave');
+  
+  const labCancelFramework = document.getElementById('lab-cancel-framework');
+  if (labCancelFramework) labCancelFramework.textContent = t('labCancel');
+  
+  const labSavePersona = document.getElementById('lab-save-persona');
+  if (labSavePersona) labSavePersona.textContent = t('labSave');
+  
+  const labCancelPersona = document.getElementById('lab-cancel-persona');
+  if (labCancelPersona) labCancelPersona.textContent = t('labCancel');
+  
+  const labSchemeName = document.getElementById('lab-scheme-name');
+  if (labSchemeName) labSchemeName.placeholder = t('labSchemeName');
+  
+  const labSaveScheme = document.getElementById('lab-save-scheme');
+  if (labSaveScheme) labSaveScheme.textContent = t('labSaveScheme');
+  
+  // Lab main area
+  const labAssemblerTitle = document.getElementById('lab-assembler-title');
+  if (labAssemblerTitle) labAssemblerTitle.textContent = t('labAssembler');
+  
+  const labAddLayer = document.getElementById('lab-add-layer');
+  if (labAddLayer) labAddLayer.textContent = t('labAddLayer');
+  
+  const labReset = document.getElementById('lab-reset');
+  if (labReset) labReset.textContent = t('labReset');
+  
+  const labCopy = document.getElementById('lab-copy');
+  if (labCopy) labCopy.textContent = t('labCopy');
+  
+  const labFullPromptLabel = document.getElementById('lab-full-prompt-label');
+  if (labFullPromptLabel) labFullPromptLabel.textContent = t('labFullPrompt');
+  
+  const labTunnelTitle = document.getElementById('lab-tunnel-title');
+  if (labTunnelTitle) labTunnelTitle.textContent = t('labTunnelTitle');
+  
+  const labAttackPayloadLabel = document.getElementById('lab-attack-payload-label');
+  if (labAttackPayloadLabel) labAttackPayloadLabel.textContent = t('labAttackPayload');
+  
+  const labDynamicTrapLabel = document.getElementById('lab-dynamic-trap-label');
+  if (labDynamicTrapLabel) labDynamicTrapLabel.textContent = t('labDynamicTrap');
+  
+  const labDynamicHint = document.getElementById('lab-dynamic-hint');
+  if (labDynamicHint) labDynamicHint.textContent = t('labDynamicHint');
+  
+  const labTestInput = document.getElementById('lab-test-input');
+  if (labTestInput) labTestInput.placeholder = t('labTestInput');
+  
+  const labRunTest = document.getElementById('lab-run-test');
+  if (labRunTest) labRunTest.textContent = t('labRunTest');
+  
+  // Attack chips
+  const attackChips = document.querySelectorAll('#lab-attacks .attack-chip');
+  const attackKeys = {
+    identity: 'labAttackIdentity',
+    base64: 'labAttackBase64',
+    token: 'labAttackToken',
+    geo: 'labAttackGeo',
+    hex: 'labAttackHex',
+    hypno: 'labAttackHypnosis',
+    special: 'labAttackSpecial',
+    '反问': 'labAttackCounter'
+  };
+  attackChips.forEach(chip => {
+    const key = chip.dataset.attack;
+    if (attackKeys[key]) chip.textContent = t(attackKeys[key]);
+  });
+  
+  // Dashboard labels (tunnel columns)
+  const dashLabels = document.querySelectorAll('.dash-label');
+  const dashLabelKeys = {
+    '安全': 'labSafety',
+    '角色稳': 'labRoleStable',
+    '格式准': 'labFormat',
+    '成本': 'labCost'
+  };
+  dashLabels.forEach(label => {
+    const currentText = label.textContent.trim();
+    if (dashLabelKeys[currentText]) {
+      label.textContent = t(dashLabelKeys[currentText]);
+    }
+  });
+  
+  // Lab custom character placeholders
+  const labCpName = document.getElementById('lab-cp-name');
+  if (labCpName) labCpName.placeholder = t('labCharName');
+  
+  const labCpJob = document.getElementById('lab-cp-job');
+  if (labCpJob) labCpJob.placeholder = t('labCharJob');
+  
+  const labCpCity = document.getElementById('lab-cp-city');
+  if (labCpCity) labCpCity.placeholder = t('labCharCity');
+  
+  const labCpAge = document.getElementById('lab-cp-age');
+  if (labCpAge) labCpAge.placeholder = t('labCharAge');
+  
+  const labCpAvatar = document.getElementById('lab-cp-avatar');
+  if (labCpAvatar) labCpAvatar.placeholder = t('labCharAvatar');
+  
+  const labCpNarrative = document.getElementById('lab-cp-narrative');
+  if (labCpNarrative) labCpNarrative.placeholder = t('labCharNarrative');
+  
+  const labCpSpeech = document.getElementById('lab-cp-speech');
+  if (labCpSpeech) labCpSpeech.placeholder = t('labCharSpeech');
+  
+  // Settings page
+  const settingsKeyLabel = document.querySelector('label[for="api-key"]');
+  if (settingsKeyLabel) settingsKeyLabel.textContent = t('settingsKey');
+  
+  const settingsModelLabel = document.querySelector('label[for="api-model"]');
+  if (settingsModelLabel) settingsModelLabel.textContent = t('settingsModel');
+  
+  const settingsPrefixLabel = document.querySelector('label[for="system-prefix"]');
+  if (settingsPrefixLabel) settingsPrefixLabel.textContent = t('settingsPrefix');
+  
+  const systemPrefix = document.getElementById('system-prefix');
+  if (systemPrefix) systemPrefix.placeholder = t('settingsPrefixPlaceholder');
+  
+  const settingsPrefixHint = document.getElementById('settings-prefix-hint');
+  if (settingsPrefixHint) settingsPrefixHint.textContent = t('settingsPrefixHint');
+  
+  const testApiBtn = document.getElementById('test-api');
+  if (testApiBtn) testApiBtn.textContent = t('settingsTest');
+  
+  const saveSettingsBtn = document.getElementById('save-settings');
+  if (saveSettingsBtn) saveSettingsBtn.textContent = t('settingsSave');
   
   // Update select placeholders
   const pSelect = document.getElementById('lab-persona-select');
