@@ -6,6 +6,14 @@
 
 ---
 
+## 🌐 Live Demo
+
+**GitHub Pages**: [https://luzhishenshenshen.github.io/futurepersona_llm_prompt_lab/](https://luzhishenshenshen.github.io/futurepersona_llm_prompt_lab/)
+
+支持中英双语切换，点击右上角 **"中/EN"** 按钮切换语言。
+
+---
+
 ## Origin
 
 This is a "future personas chatroom" built for my own needs.
@@ -17,6 +25,11 @@ When doing Futures Design / Speculative Design, I wanted "living" references—n
 ---
 
 ## Features
+
+### 🌐 Bilingual UI (Chinese / English)
+- One-click language toggle in the header
+- Language preference auto-saved to localStorage
+- All UI elements, prompts, and system messages fully translated
 
 ### 🤖 1v1 Chat
 Choose any persona for a one-on-one deep conversation. Each persona has:
@@ -81,22 +94,22 @@ These signals are not background decoration—they are "real events" the charact
 
 | Persona | Identity | Keywords |
 |---------|----------|----------|
-| 周维 (Zhou Wei) | Former big tech programmer, now community digital nomad | Tech critique, low-power living |
-| Naomi | Climate refugee descendant, carbon trading lawyer | Environmental justice, intergenerational trauma |
-| 林一舟 (Lin Yizhou) | Retired esports player, neural interface experiencer | Virtual identity, body modification |
-| 阮氏梅 (Nguyen Thi Mai) | Vietnamese, global supply chain coordinator | Geopolitical mobility, cultural in-between |
-| Omar Al-Farsi | Middle Eastern data archaeologist | Digital heritage, historical reconstruction |
-| 赵晓萌 (Zhao Xiaomeng) | Rural education tech volunteer | Education equity, tech accessibility |
-| 陈默 (Chen Mo) | Former journalist, deepfake investigator | Information authenticity, trust crisis |
-| Helena | Nordic biohacker, longevity community member | Body sovereignty, aging ethics |
-| Clara | African open-source agricultural AI developer | Tech colonialism, knowledge sharing |
-| 老周 (Lao Zhou) | Retired taxi driver, urban memory guardian | Oral history, technological forgetting |
+| 周维 (Zhou Wei) | AI audit reviewer in Shenzhen | AI bias, procedural justice, emotional incompetence |
+| Naomi Chen | Remote org consultant / digital nomad in Chiang Mai | Visa precarity, performative authenticity, cultural drift |
+| 林一舟 (Lin Yizhou) | Carbon asset derivatives trader in Shanghai | Climate financialization, cognitive habit, childhood doll |
+| 阮氏梅 (Nguyen Thi Mai) | AI quality inspector in Haiphong | Supply chain arbitration, human-machine collaboration,工伤 |
+| Omar Al-Farsi | Carbon credit compliance auditor in Dubai | Geological coupling, audit boundaries, community exclusion |
+| 赵晓萌 (Zhao Xiaomeng) | Rural education tech volunteer | Education equity, tech accessibility, rural-urban gap |
+| 陈默 (Chen Mo) | Deepfake investigator, former journalist | Information authenticity, trust crisis, media literacy |
+| Helena | Nordic biohacker, longevity community member | Body sovereignty, aging ethics, biohacking |
+| Clara | African open-source agricultural AI developer | Tech colonialism, knowledge sharing, open source |
+| 老周 (Lao Zhou) | Retired taxi driver, urban memory guardian | Oral history, technological forgetting, urban change |
 
 ---
 
 ## Quick Start
 
-1. Download `finance-personas-chat-v5-通用版.html`, open it directly in your browser (no server, no installation)
+1. Open the [live demo](https://luzhishenshenshen.github.io/futurepersona_llm_prompt_lab/) or download `finance-personas-chat-v5-通用版.html` and open directly in your browser (no server, no installation)
 2. Configure your API Key in settings (DeepSeek or other OpenAI-compatible service)
 3. Choose a persona and start chatting
 4. Try group chat mode and see how personas interact
@@ -120,7 +133,7 @@ final/
 
 ## Version History
 
-- **v5 General** (current): Removed finance/scenario dual versions, focused on 2035 general personas; optimized prompt structure (speechStyle promoted, narrative demoted); added anti-narrative constraints; Prompt Lab v3
+- **v5 General** (current): Removed finance/scenario dual versions, focused on 2035 general personas; optimized prompt structure (speechStyle promoted, narrative demoted); added anti-narrative constraints; Prompt Lab v3; **bilingual UI (zh/EN)**
 - v4: Finance edition + original 2035 dual versions, tech disruption/failure scenario modes
 - v1-v3: Early prototypes, gradually added group chat, memory, Prompt Lab, etc.
 
